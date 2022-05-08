@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  mysqldb:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=hrstest
+    ports:
+      - 3306:3306
+  app:
+    depends_on:
+      - mysqldb
+    build: ../hrstest
+    restart: on-failure
+    ports:
+      - 8081:8081
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "datasource.url": "jdbc:mysql://mysqldb:3306/hrstest"
+      }'
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+volumes:
+  db:

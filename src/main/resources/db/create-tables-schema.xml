@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="01" author="hrs.test">
+    <createTable tableName="vat_availability"
+      remarks="A table to contain all vat availables">
+      <column name="id" type="nvarchar(50)">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="country_code" type="nvarchar(3)"/>
+      <column name="vat_number" type="nvarchar(20)"/>
+      <column name="business_name" type="nvarchar(250)"/>
+      <column name="business_address" type="nvarchar(500)"/>
+      <column name="business_building" type="nvarchar(250)"/>
+      <column name="business_street_number" type="nvarchar(50)"/>
+      <column name="business_street" type="nvarchar(250)"/>
+      <column name="business_city" type="nvarchar(50)"/>
+      <column name="business_state_or_province" type="nvarchar(50)"/>
+      <column name="business_postal_code" type="nvarchar(20)"/>
+      <column name="business_country" type="nvarchar(100)"/>
+    </createTable>
+    
+  </changeSet>
+</databaseChangeLog>
