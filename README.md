@@ -10,8 +10,8 @@ Installation:
 # Maven Commands
 - Build `mvn clean package`
 
-#Docker compose
-Run `docker-compose up -d`
+# Docker compose
+- Run `docker-compose up -d`
 
 # Test API
 If docker run properly without any error (mysql database and spring boot app are running)
